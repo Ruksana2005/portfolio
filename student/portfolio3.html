@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        // Function to show popup if login was successful
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('message') && urlParams.get('message') === 'success') {
+                alert("Student logged in successfully!");
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="Logo">Welcome to My Portfolio Website</h1>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Certifications</a>
+            <a href="#">Contact Me</a>
+        </nav>
+    </header>
+    <div class="img-box">
+        <img src="./portfolio1.png" draggable="false" alt="">
+    </div>
+    <div class="text-box">
+        <h1>Hi, I'm Rajitha</h1>
+        <h1>
+            <span class="skills"></span>
+        </h1>
+        <p>I am currently doing an internship in slash mark as an full stack web developer.Recently I have participated in Smart India Hackathon(SIH-2023) where I build an application using HTML,CSS and JAVASCRIPT.I am actively Engaged in doing projects in Java and Python Programming.I have successfully completed my internship given by systemtron in feb 2024.These experiences have provided me with valuable insoights into the real-world applications of my academic knowledge and have helped me to cultivate a strong work ethic.I have learned to adapt to dynamic environments and collaborate effectively with professionals from various backgrounds.</p>
+    
+    <ul>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+         
+            <div class="icon-box">
+                <a href="https://www.linkedin.com/in/rajitha-bojanapu-261186252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+                " target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.hackerrank.com/profile/rajitha70133" target="_blank"><i class="fab fa-hackerrank"></i></a>
+                <a href="https://github.com/Rajitha2004" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            
+    </ul>
+    
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="scripts.js"></script>
+    
+      
+</body>
+</html>
