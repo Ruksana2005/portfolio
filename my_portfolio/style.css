@@ -223,21 +223,48 @@ section {
 }
 
 /* Text Box */
+
+
 .text-box {
-    max-width: 950px;
-    margin-top: 0px;           /* Remove extra margin above heading */
-    margin-bottom: -20px;
     text-align: center;
-    color: white;
+    padding: 20px 15px;  /* Reduced padding */
+    max-width: 550px;    /* Limits width of the box */
+    margin: auto;
+    margin-bottom: 40px;
+    background: radial-gradient(circle at top, #04364A 0%, #0C2D48 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .text-box h1 {
-    font-size: 37px;
-    font-weight: 300;
-    color: #97FFF4;
-    margin-top: -20px;           /* Reduce space above heading */
-    margin-bottom: -10px;          /* Remove space below if not needed */
+    font-size: 25px;
+    font-weight: 500;
+    color: #A7F6FF;
+    margin: 0 0 4px 0; /* Tight space below */
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000;
+    margin-bottom:-30px;
 }
+
+.text-box h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    text-shadow: 2px 2px 4px #222;
+}
+
+.text-box h3 {
+    font-size: 32px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #00feba, #5b5bd6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
 
 .text-box .skills {
     color: var(--aqua-color);
@@ -245,7 +272,7 @@ section {
 
 .text-box p {
     font-size: 15px;
-    margin-top: 30px;
+    margin-top: 45px;
     width: 85%;
     margin-left: auto;
     margin-right: auto;
