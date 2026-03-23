@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    
+    <!-- Google Fonts: Outfit & Inter for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Overlay for cart sidebar -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Top Navigation (Amazon/Flipkart Style) -->
+    <header class="ecommerce-header">
+        <nav class="navbar-top" id="navbar">
+            <div class="nav-container">
+                <!-- Branding -->
+                <div class="nav-left">
+                    <a href="#" class="brand">Shop<span>Nova</span></a>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="nav-search">
+                    <form class="search-form" onsubmit="event.preventDefault();">
+                        <select class="search-select">
+                            <option>All</option>
+                            <option>Fashion</option>
+                            <option>Electronics</option>
+                        </select>
+                        <input type="text" placeholder="Search for products, brands and more...">
+                        <button type="submit" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
+                    </form>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="nav-actions">
+                    <button class="nav-action-btn theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                        <i class="ph ph-moon"></i>
+                        <span>Theme</span>
+                    </button>
+                    <a href="#" class="nav-action-btn">
+                        <i class="ph ph-user"></i>
+                        <span>Sign In</span>
+                    </a>
+                    <a href="#" class="nav-action-btn">
+                        <i class="ph ph-heart"></i>
+                        <span>Saved</span>
+                    </a>
+                    <button class="nav-action-btn cart-btn" id="cart-btn" aria-label="Cart">
+                        <div class="cart-icon-wrapper">
+                            <i class="ph ph-shopping-cart"></i>
+                            <span class="cart-badge" id="cart-badge">0</span>
+                        </div>
+                        <span>Cart</span>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Secondary Nav (Categories) -->
+        <nav class="navbar-secondary">
+            <div class="nav-container">
+                <div class="secondary-links">
+                    <a href="#" class="category-menu-btn"><i class="ph ph-list"></i> All</a>
+                    <a href="#featured">Today's Deals</a>
+                    <a href="#mobiles">Mobiles</a>
+                    <a href="#electronics">Electronics</a>
+                    <a href="#fashion">Fashion</a>
+                    <a href="#home">Home & Kitchen</a>
+                    <a href="#beauty">Beauty</a>
+                    <a href="#books">Books</a>
+                </div>
+                <div class="secondary-right">
+                    <a href="#"><i class="ph ph-seal-percent"></i> Get App</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="icon-btn close-cart" id="close-cart">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be injected here via JS -->
+            <div class="empty-cart-msg">Your cart is empty.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary btn-full checkout-btn" style="text-align:center; display:block; text-decoration: none;">Checkout</a>
+        </div>
+    </aside>
+
+    <main>
+        <!-- Categories Circle Menu -->
+        <section class="mega-categories">
+            <div class="mega-categories-container scrollable-x">
+                <a href="#" class="circle-cat">
+                    <div class="circle-img-wrapper"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Top Offers"></div>
+                    <span>Top Offers</span>
+                </a>
+                <a href="#" class="circle-cat">
+                    <div class="circle-img-wrapper"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Mobiles"></div>
+                    <span>Mobiles</span>
+                </a>
+                <a href="#" class="circle-cat">
+                    <div class="circle-img-wrapper"><img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Electronics"></div>
+                    <span>Electronics</span>
+                </a>
+                <a href="#" class="circle-cat">
+                    <div class="circle-img-wrapper"><img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Fashion"></div>
+                    <span>Fashion</span>
+                </a>
+                <a href="#" class="circle-cat">
+                    <div class="circle-img-wrapper"><img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Home"></div>
+                    <span>Home & Furniture</span>
+                </a>
+                <a href="#" class="circle-cat">
+                    <div class="circle-img-wrapper"><img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Beauty"></div>
+                    <span>Beauty</span>
+                </a>
+                <a href="#" class="circle-cat">
+                    <div class="circle-img-wrapper"><img src="https://images.unsplash.com/photo-1555529733-0e670560f8e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Toys"></div>
+                    <span>Toys & More</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Hero Slider Banner -->
+        <section class="hero-slider" id="discover">
+            <div class="slider-container" id="slider-container">
+                <div class="slide" style="background: linear-gradient(90deg, #2874f0 0%, #004dca 100%);">
+                    <div class="slide-content">
+                        <h2 style="color: #fff;">Big Saving Days</h2>
+                        <p style="color: rgba(255,255,255,0.8);">Get up to 80% off on all electronics.</p>
+                        <a href="#electronics" class="btn btn-primary btn-slider">Shop Now</a>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Laptops Promo">
+                </div>
+                <div class="slide" style="background: linear-gradient(90deg, #ff9900 0%, #e68a00 100%);">
+                    <div class="slide-content">
+                        <h2 style="color: #111;">Amazon Fresh Specials</h2>
+                        <p style="color: #333;">Daily essentials delivered to your door.</p>
+                        <a href="#groceries" class="btn btn-primary" style="background: #111; color: #fff;">Explore Deals</a>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Groceries Promo">
+                </div>
+            </div>
+            <button class="slider-btn prev-btn" id="prev-slide"><i class="ph ph-caret-left"></i></button>
+            <button class="slider-btn next-btn" id="next-slide"><i class="ph ph-caret-right"></i></button>
+            <div class="slider-dots" id="slider-dots"></div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section categories" id="categories">
+            <div class="section-header">
+                <h2>Browse Categories</h2>
+                <a href="#" class="link-arrow">View All <i class="ph ph-arrow-right"></i></a>
+            </div>
+            <div class="categories-grid">
+                <!-- Category 1 -->
+                <a href="#" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Apparel">
+                    <div class="category-content glass">
+                        <h3>Apparel</h3>
+                        <span>120 Items</span>
+                    </div>
+                </a>
+                <!-- Category 2 -->
+                <a href="#" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Watches">
+                    <div class="category-content glass">
+                        <h3>Watches</h3>
+                        <span>45 Items</span>
+                    </div>
+                </a>
+                <!-- Category 3 -->
+                <a href="#" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Accessories">
+                    <div class="category-content glass">
+                        <h3>Accessories</h3>
+                        <span>80 Items</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="section featured" id="featured">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be dynamically generated by JS -->
+            </div>
+        </section>
+
+        <!-- Dynamic Promo Section -->
+        <section class="promo">
+            <div class="promo-content">
+                <h2>Seamless Experience. Unmatched Quality.</h2>
+                <p>Join our exclusive members club to get early access to drops and sales.</p>
+                <div class="email-capture">
+                    <input type="email" placeholder="Enter your email">
+                    <button class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+            <div class="promo-image">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Promo Content">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="brand">Lumina<span>.</span></a>
+                <p>Crafting modern essentials for the visionary minimalist.</p>
+                <div class="social-links">
+                    <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <a href="#">All Products</a>
+                <a href="#">New Arrivals</a>
+                <a href="#">Discounts</a>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="contact.html">Contact</a>
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lumina. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
